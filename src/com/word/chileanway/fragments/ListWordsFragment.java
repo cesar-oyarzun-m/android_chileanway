@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.word.chileanway.DetailWordsPagerActivity;
 import com.word.chileanway.R;
+import com.word.chileanway.adapter.WordAdapter;
 import com.word.chileanway.model.ChileanWayModel;
 import com.word.chileanway.model.WordVO;
 
@@ -60,7 +61,7 @@ public class ListWordsFragment extends ListFragment implements
 				false);
 		emptyText = (TextView)rootView.findViewById(android.R.id.empty);
 		
-		wordAdapter = new ArrayAdapter<>(getActivity(),
+		wordAdapter = new WordAdapter(getActivity(),
 				android.R.layout.simple_list_item_1, ChileanWayModel
 						.getInstance().getWordList());
 		setListAdapter(wordAdapter);

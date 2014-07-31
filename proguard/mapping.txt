@@ -3938,7 +3938,12 @@ com.word.chileanway.DetailWordsPagerActivity$2 -> com.word.chileanway.b:
     void onPageSelected(int) -> a
 com.word.chileanway.MainActivity -> com.word.chileanway.MainActivity:
     void onCreate(android.os.Bundle) -> onCreate
-com.word.chileanway.fragments.DetailWordsFragment -> com.word.chileanway.a.a:
+com.word.chileanway.adapter.WordAdapter -> com.word.chileanway.a.a:
+    android.app.Activity context -> a
+    java.util.ArrayList items -> b
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    int getCount() -> getCount
+com.word.chileanway.fragments.DetailWordsFragment -> com.word.chileanway.b.a:
     android.speech.tts.TextToSpeech textToSpeech -> P
     com.word.chileanway.model.WordVO selectedWord -> Q
     com.word.chileanway.fragments.DetailWordsFragment newInstance(com.word.chileanway.model.WordVO) -> a
@@ -3950,10 +3955,10 @@ com.word.chileanway.fragments.DetailWordsFragment -> com.word.chileanway.a.a:
     void speakOut() -> A
     void onDestroy() -> n
     void access$0(com.word.chileanway.fragments.DetailWordsFragment) -> a
-com.word.chileanway.fragments.DetailWordsFragment$1 -> com.word.chileanway.a.b:
+com.word.chileanway.fragments.DetailWordsFragment$1 -> com.word.chileanway.b.b:
     com.word.chileanway.fragments.DetailWordsFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.word.chileanway.fragments.ListWordsFragment -> com.word.chileanway.a.c:
+com.word.chileanway.fragments.ListWordsFragment -> com.word.chileanway.b.c:
     android.widget.ArrayAdapter wordAdapter -> X
     android.widget.SearchView searchView -> Y
     android.widget.TextView emptyText -> Z
@@ -3968,14 +3973,14 @@ com.word.chileanway.fragments.ListWordsFragment -> com.word.chileanway.a.c:
     boolean onQueryTextSubmit(java.lang.String) -> onQueryTextSubmit
     void onActivityResult(int,int,android.content.Intent) -> a
     void showToastMessage(java.lang.String) -> a
-com.word.chileanway.model.ChileanWayModel -> com.word.chileanway.b.a:
+com.word.chileanway.model.ChileanWayModel -> com.word.chileanway.c.a:
     java.util.ArrayList wordList -> a
     com.word.chileanway.model.ChileanWayModel model -> b
     com.word.chileanway.model.ChileanWayModel getInstance() -> a
     java.util.ArrayList loadJsonFile(android.content.Context,android.content.res.AssetManager) -> a
     java.lang.String loadJSONFromAsset(android.content.res.AssetManager) -> a
     java.util.ArrayList getWordList() -> b
-com.word.chileanway.model.WordVO -> com.word.chileanway.b.b:
+com.word.chileanway.model.WordVO -> com.word.chileanway.c.b:
     java.lang.String spanish -> a
     java.lang.String exapmple_us -> b
     java.lang.String exapmple_es -> c

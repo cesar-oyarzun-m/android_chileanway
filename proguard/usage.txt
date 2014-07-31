@@ -2148,7 +2148,6 @@ com.word.chileanway.R$menu
 com.word.chileanway.R$string
 com.word.chileanway.R$style
 com.word.chileanway.R$styleable
-com.word.chileanway.adapter.WordAdapter
 com.word.chileanway.fragments.DetailWordsFragment:
     public static final java.lang.String SELECTED_WORD
 com.word.chileanway.fragments.ListWordsFragment:

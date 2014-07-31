@@ -1,11 +1,17 @@
 package com.word.chileanway.adapter;
 
-import com.word.chileanway.model.WordVO;
+import java.util.ArrayList;
 
-import android.content.Context;
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import com.word.chileanway.R;
+import com.word.chileanway.model.WordVO;
 /**
  * Word adapter list
  * @author Cesar Oyarzun
@@ -13,12 +19,25 @@ import android.widget.ArrayAdapter;
  */
 public class WordAdapter extends ArrayAdapter<WordVO> {
 
-	public WordAdapter(Context context, int resource) {
-		super(context, resource);
+	private Activity context=null;
+	private ArrayList<WordVO> items=null;
+	
+	public WordAdapter(Activity context, int resource,ArrayList<WordVO> items) {
+		super(context, R.layout.list_row,items);
+		this.context=context;
+		this.items=items;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		return super.getView(position, convertView, parent);
+		LayoutInflater layoutInflater = context.getLayoutInflater();
+		View rowView = layoutInflater.inflate(R.layout.list_row, null,true);
+		TextView txtTitle = (TextView) rowView.findViewById(R.id.name);
+		txtTitle.setText(items.get(position).getSpanish());
+		return rowView;
+	}
+	@Override
+	public int getCount() {
+		return this.items.size();
 	}
 }

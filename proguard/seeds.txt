@@ -970,7 +970,9 @@ com.word.chileanway.R$color: int abc_search_url_text_holo
 com.word.chileanway.R$color: int abc_search_url_text_normal
 com.word.chileanway.R$color: int abc_search_url_text_pressed
 com.word.chileanway.R$color: int abc_search_url_text_selected
+com.word.chileanway.R$color: int blue
 com.word.chileanway.R$color: int light_grey
+com.word.chileanway.R$color: int white
 com.word.chileanway.R$dimen: int abc_action_bar_default_height
 com.word.chileanway.R$dimen: int abc_action_bar_icon_vertical_padding
 com.word.chileanway.R$dimen: int abc_action_bar_progress_bar_size
@@ -1082,6 +1084,9 @@ com.word.chileanway.R$drawable: int abc_textfield_searchview_holo_light
 com.word.chileanway.R$drawable: int abc_textfield_searchview_right_holo_dark
 com.word.chileanway.R$drawable: int abc_textfield_searchview_right_holo_light
 com.word.chileanway.R$drawable: int chile_icon
+com.word.chileanway.R$drawable: int layer_card_background
+com.word.chileanway.R$drawable: int layer_card_background_selected
+com.word.chileanway.R$drawable: int list_selector
 com.word.chileanway.R$drawable: int speaker
 com.word.chileanway.R$id: int LinearLayout1
 com.word.chileanway.R$id: int action_bar
@@ -1123,6 +1128,7 @@ com.word.chileanway.R$id: int list_item
 com.word.chileanway.R$id: int menu_item_search
 com.word.chileanway.R$id: int menu_item_searchVoice
 com.word.chileanway.R$id: int middle
+com.word.chileanway.R$id: int name
 com.word.chileanway.R$id: int never
 com.word.chileanway.R$id: int none
 com.word.chileanway.R$id: int normal
