@@ -8,13 +8,10 @@ import com.word.chileanway.model.ChileanWayModel;
 
 /**
  * Main Fragment Activity
- * 
  * @author Cesar Oyarzun
  * 
  */
 public class MainActivity extends FragmentActivity{
-
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

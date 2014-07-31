@@ -39,8 +39,15 @@ import com.word.chileanway.model.WordVO;
  * 
  */
 @SuppressLint("NewApi")
-public class ListWordsFragment extends ListFragment implements
-		SearchView.OnQueryTextListener {
+public class ListWordsFragment extends ListFragment implements SearchView.OnQueryTextListener {
+	
+	private static final String SERVER_ERROR = "Server Error";
+	private static final String NO_MATCH = "No Match";
+	private static final String NETWORK_ERROR = "Network Error";
+	private static final String CLIENT_ERROR = "Client Error";
+	private static final String PLEASE_START_SPEAKING = "Please start speaking";
+	private static final String ES_CL = "es-CL";
+	private static final String AUDIO_ERROR = "Audio Error";
 	private static final int REQUEST_CODE = 1234;
 	private static final int RESULT_OK=-1;
 	private ArrayAdapter<WordVO> wordAdapter=null;
@@ -120,17 +127,17 @@ public class ListWordsFragment extends ListFragment implements
 	}
 
 	/**
-	 * Fire an intent to start the voice recognition activity.
+	 * Start the Speech Recognition Intent
 	 */
 	private void startVoiceRecognitionActivity()
 	{
 		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
         RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "es-ES");
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Please start speaking");
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, ES_CL);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,PLEASE_START_SPEAKING);
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-ES");
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, ES_CL);
         startActivityForResult(intent, REQUEST_CODE);
 	}
 	
@@ -157,26 +164,26 @@ public class ListWordsFragment extends ListFragment implements
 		        // Populate the wordsList with the String values the recognition engine thought it heard
 		        ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 		        wordAdapter.getFilter().filter(matches.get(0));
-		        searchView.setQueryHint("text");
-		        searchView.callOnClick();
 		        
 		    }else if(resultCode == RecognizerIntent.RESULT_AUDIO_ERROR){
-		        showToastMessage("Audio Error");
+		        showToastMessage(AUDIO_ERROR);
 		       }else if(resultCode == RecognizerIntent.RESULT_CLIENT_ERROR){
-		        showToastMessage("Client Error");
+		        showToastMessage(CLIENT_ERROR);
 		       }else if(resultCode == RecognizerIntent.RESULT_NETWORK_ERROR){
-		        showToastMessage("Network Error");
+		        showToastMessage(NETWORK_ERROR);
 		       }else if(resultCode == RecognizerIntent.RESULT_NO_MATCH){
-		        showToastMessage("No Match");
+		        showToastMessage(NO_MATCH);
 		       }else if(resultCode == RecognizerIntent.RESULT_SERVER_ERROR){
-		        showToastMessage("Server Error");
+		        showToastMessage(SERVER_ERROR);
 		       }
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
+	
 	/**
-	 * Helper method to show the toast message
-	 **/
+	 * Show toast Message
+	 * @param message
+	 */
 	 void showToastMessage(String message){
 	  Toast.makeText(this.getActivity(), message, Toast.LENGTH_SHORT).show();
 	 }

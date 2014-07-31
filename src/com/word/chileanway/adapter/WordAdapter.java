@@ -3,7 +3,6 @@ package com.word.chileanway.adapter;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +35,7 @@ public class WordAdapter extends ArrayAdapter<WordVO> {
 		txtTitle.setText(items.get(position).getSpanish());
 		return rowView;
 	}
+	
 	@Override
 	public int getCount() {
 		return this.items.size();

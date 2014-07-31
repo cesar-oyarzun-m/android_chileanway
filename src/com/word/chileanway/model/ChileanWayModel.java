@@ -16,9 +16,20 @@ import android.content.res.AssetManager;
  *
  */
 public class ChileanWayModel {
+	private static final String UTF_8 = "UTF-8";
+	private static final String DICTIONARY_JSON = "dictionary.json";
+	private static final String DATA = "data";
+	private static final String EXAMPLE_US = "example_us";
+	private static final String EXAMPLE_ES = "example_es";
+	private static final String WORD_US = "word_us";
+	private static final String WORD_ES = "word_es";
 	private ArrayList<WordVO> wordList;
 	private static ChileanWayModel model=null;
 	
+	/**
+	 * Get Model Instance
+	 * @return {@link ChileanWayModel}
+	 */
 	public static ChileanWayModel getInstance(){
 		if(model==null){
 			model=new ChileanWayModel();
@@ -26,6 +37,12 @@ public class ChileanWayModel {
 		return model;
 	}
 	
+	/**
+	 * Load Json Model from json File
+	 * @param context
+	 * @param assetManaget
+	 * @return {@link ArrayList}
+	 */
 	public  ArrayList<WordVO> loadJsonFile(Context context,AssetManager assetManaget) {
 		wordList = new ArrayList<WordVO>();
 		String jsonStr = loadJSONFromAsset(assetManaget);
@@ -34,13 +51,13 @@ public class ChileanWayModel {
 			jsonObj = new JSONObject(jsonStr);
 			
 			// Getting data JSON Array nodes
-			JSONArray dictionaryArray = jsonObj.getJSONArray("data");
+			JSONArray dictionaryArray = jsonObj.getJSONArray(DATA);
 			for (int i = 0; i < dictionaryArray.length(); i++) {
 				JSONObject word = dictionaryArray.getJSONObject(i);
-				String spanishWord = word.getString("word_es");
-				String englishWord = word.getString("word_us");
-				String example_es=word.getString("example_es");
-				String example_us=word.getString("example_us");
+				String spanishWord = word.getString(WORD_ES);
+				String englishWord = word.getString(WORD_US);
+				String example_es=word.getString(EXAMPLE_ES);
+				String example_us=word.getString(EXAMPLE_US);
 				WordVO wordObject=new WordVO(spanishWord,englishWord,example_es,example_us);
 				wordList.add(wordObject);
 			}
@@ -50,17 +67,20 @@ public class ChileanWayModel {
 		return wordList;
 	}
 	
-	
+	/**
+	 * Loaad Json dictionary from local phone store
+	 * @param assetManaget
+	 * @return
+	 */
 	private  String loadJSONFromAsset(AssetManager assetManaget) {
 		String json = null;
-//		Log.d("MODEL", "READING MODEL");
 		try {
-			InputStream is = assetManaget.open("dictionary.json");
+			InputStream is = assetManaget.open(DICTIONARY_JSON);
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			is.read(buffer);
 			is.close();
-			json = new String(buffer, "UTF-8");
+			json = new String(buffer, UTF_8);
 
 		} catch (IOException ex) {
 			ex.printStackTrace();
@@ -68,7 +88,10 @@ public class ChileanWayModel {
 		}
 		return json;
 	}
-	
+	/**
+	 * Get model
+	 * @return {@link ArrayList}
+	 */
 	public  ArrayList<WordVO> getWordList() {
 		return wordList;
 	}

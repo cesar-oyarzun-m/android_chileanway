@@ -29,6 +29,9 @@ import com.word.chileanway.model.WordVO;
  */
 public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInitListener{
 
+	private static final String THIS_LANGUAGE_IS_NOT_SUPPORTED = "This Language is not supported";
+	private static final String INITILIZATION_FAILED = "Initilization Failed!";
+	private static final String ES_CL = "es-CL";
 	public static final String SELECTED_WORD = "selected_word";
 	private TextToSpeech textToSpeech=null;
 	private WordVO selectedWord=null;
@@ -78,7 +81,6 @@ public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInit
 		});
 		
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-			// if (NavUtils.getParentActivityName(getActivity()) != null) {
 			getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 
@@ -105,25 +107,27 @@ public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInit
 
 	@Override
 	public void onInit(int status) {
-
 		if (status == TextToSpeech.SUCCESS) {
-			Locale locale=new Locale("es-CL");
+			Locale locale=new Locale(ES_CL);
           int result = textToSpeech.setLanguage(locale);
           if (TextToSpeech.LANG_MISSING_DATA==result || TextToSpeech.LANG_NOT_SUPPORTED==result){
-				Log.e("error", "This Language is not supported");
+				Log.e("error", THIS_LANGUAGE_IS_NOT_SUPPORTED);
 			} 
 		} else {
-			Log.e("error", "Initilization Failed!");
+			Log.e("error", INITILIZATION_FAILED);
 		}
 	}
 	
+	/**
+	 * Speak Out selected word
+	 */
 	private void speakOut() {
         String text = selectedWord.getSpanish();
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
+	
 	@Override
 	public void onDestroy() {
-		// TODO Auto-generated method stub
 		if(textToSpeech!=null){
 			textToSpeech.stop();
 			textToSpeech.shutdown();
