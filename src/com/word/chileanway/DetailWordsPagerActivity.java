@@ -2,6 +2,8 @@ package com.word.chileanway;
 
 import java.util.ArrayList;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -23,6 +25,7 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 	private ViewPager mViewPager;
 	private ArrayList<WordVO> wordsModel;
 
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,8 +47,8 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 			}
 		});
 
-		WordVO word = (WordVO) getIntent().getSerializableExtra(
-				DetailWordsFragment.SELECTED_WORD);
+		WordVO word = (WordVO) getIntent().getSerializableExtra(DetailWordsFragment.SELECTED_WORD);
+		getActionBar().setTitle(word.getSpanish());
 		for (int i = 0; i < wordsModel.size(); i++) {
 			if (wordsModel.get(i).getSpanish().equals(word.getSpanish())) {
 				mViewPager.setCurrentItem(i);
@@ -66,6 +69,7 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 						WordVO word = wordsModel.get(pos);
 						if (word.getSpanish() != null) {
 							setTitle(word.getSpanish());
+							getActionBar().setTitle(word.getSpanish());;
 						}
 					}
 				});

@@ -972,6 +972,7 @@ com.word.chileanway.R$color: int abc_search_url_text_pressed
 com.word.chileanway.R$color: int abc_search_url_text_selected
 com.word.chileanway.R$color: int blue
 com.word.chileanway.R$color: int light_grey
+com.word.chileanway.R$color: int red
 com.word.chileanway.R$color: int white
 com.word.chileanway.R$dimen: int abc_action_bar_default_height
 com.word.chileanway.R$dimen: int abc_action_bar_icon_vertical_padding
@@ -1213,7 +1214,9 @@ com.word.chileanway.R$string: int searchVoice
 com.word.chileanway.R$string: int search_hint
 com.word.chileanway.R$style: int AppBaseTheme
 com.word.chileanway.R$style: int AppTheme
+com.word.chileanway.R$style: int CustomActionBarTheme
 com.word.chileanway.R$style: int ListView
+com.word.chileanway.R$style: int MyActionBar
 com.word.chileanway.R$style: int TextAppearance_AppCompat_Base_CompactMenu_Dialog
 com.word.chileanway.R$style: int TextAppearance_AppCompat_Base_SearchResult
 com.word.chileanway.R$style: int TextAppearance_AppCompat_Base_SearchResult_Subtitle

@@ -2149,14 +2149,29 @@ com.word.chileanway.R$string
 com.word.chileanway.R$style
 com.word.chileanway.R$styleable
 com.word.chileanway.fragments.DetailWordsFragment:
+    private static final java.lang.String THIS_LANGUAGE_IS_NOT_SUPPORTED
+    private static final java.lang.String INITILIZATION_FAILED
+    private static final java.lang.String ES_CL
     public static final java.lang.String SELECTED_WORD
 com.word.chileanway.fragments.ListWordsFragment:
+    private static final java.lang.String SERVER_ERROR
+    private static final java.lang.String NO_MATCH
+    private static final java.lang.String NETWORK_ERROR
+    private static final java.lang.String CLIENT_ERROR
+    private static final java.lang.String PLEASE_START_SPEAKING
+    private static final java.lang.String ES_CL
+    private static final java.lang.String AUDIO_ERROR
     private static final int REQUEST_CODE
     private static final int RESULT_OK
+com.word.chileanway.model.ChileanWayModel:
+    private static final java.lang.String UTF_8
+    private static final java.lang.String DICTIONARY_JSON
+    private static final java.lang.String DATA
+    private static final java.lang.String WORD_US
+    private static final java.lang.String WORD_ES
 com.word.chileanway.model.WordVO:
     private static final long serialVersionUID
-    32:33:public void setExapmple_us(java.lang.String)
-    40:41:public void setExapmple_es(java.lang.String)
-    47:48:public void setSpanish(java.lang.String)
-    54:55:public void setEnglish(java.lang.String)
+    32:33:public void setDefinition_es(java.lang.String)
+    39:40:public void setSpanish(java.lang.String)
+    46:47:public void setEnglish(java.lang.String)
 com.word.chileanway.view.SearchVoiceView

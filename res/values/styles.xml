@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -11,6 +11,7 @@
             backward-compatibility can go here.
         -->
     </style>
+    
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
@@ -18,10 +19,30 @@
     </style>
 
     <style name="ListView" parent="@android:style/Widget.ListView">
-    <item name="android:background">@color/light_grey</item>
-    <item name="android:cacheColorHint">@android:color/transparent</item>
-    <item name="android:divider">@android:color/transparent</item>
-    <item name="android:dividerHeight">0dp</item>
-<!--     <item name="android:listSelector">@drawable/list_item_selector</item> -->
-</style>
+        <item name="android:background">@color/light_grey</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+           parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle" tools:targetApi="11">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background" tools:targetApi="11">@color/red</item>
+
+        <!-- Support library compatibility -->
+        <item name="background" tools:targetApi="11">@color/red</item>
+    </style>
+    
+    
+    
 </resources>

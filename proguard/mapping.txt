@@ -3982,11 +3982,9 @@ com.word.chileanway.model.ChileanWayModel -> com.word.chileanway.c.a:
     java.util.ArrayList getWordList() -> b
 com.word.chileanway.model.WordVO -> com.word.chileanway.c.b:
     java.lang.String spanish -> a
-    java.lang.String exapmple_us -> b
-    java.lang.String exapmple_es -> c
-    java.lang.String english -> d
-    java.lang.String getExapmple_us() -> a
-    java.lang.String getExapmple_es() -> b
-    java.lang.String getSpanish() -> c
-    java.lang.String getEnglish() -> d
+    java.lang.String definition_es -> b
+    java.lang.String english -> c
+    java.lang.String getDefinition_es() -> a
+    java.lang.String getSpanish() -> b
+    java.lang.String getEnglish() -> c
     java.lang.String toString() -> toString

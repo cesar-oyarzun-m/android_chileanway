@@ -19,8 +19,6 @@ public class ChileanWayModel {
 	private static final String UTF_8 = "UTF-8";
 	private static final String DICTIONARY_JSON = "dictionary.json";
 	private static final String DATA = "data";
-	private static final String EXAMPLE_US = "example_us";
-	private static final String EXAMPLE_ES = "example_es";
 	private static final String WORD_US = "word_us";
 	private static final String WORD_ES = "word_es";
 	private ArrayList<WordVO> wordList;
@@ -56,9 +54,8 @@ public class ChileanWayModel {
 				JSONObject word = dictionaryArray.getJSONObject(i);
 				String spanishWord = word.getString(WORD_ES);
 				String englishWord = word.getString(WORD_US);
-				String example_es=word.getString(EXAMPLE_ES);
-				String example_us=word.getString(EXAMPLE_US);
-				WordVO wordObject=new WordVO(spanishWord,englishWord,example_es,example_us);
+				String definition_es=word.getString("definition_es");
+				WordVO wordObject=new WordVO(spanishWord,englishWord,definition_es);
 				wordList.add(wordObject);
 			}
 		} catch (JSONException e) {

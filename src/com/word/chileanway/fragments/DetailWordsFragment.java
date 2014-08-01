@@ -63,13 +63,13 @@ public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInit
 		textViewSpanish.setText(selectedWord.getSpanish());
 		
 		TextView textViewExample_es = (TextView) inflate.findViewById(R.id.example_es);
-		textViewExample_es.setText(selectedWord.getExapmple_es());
+		textViewExample_es.setText(selectedWord.getDefinition_es());
 		
 		TextView textViewEnglish = (TextView) inflate.findViewById(R.id.englishWord);
 		textViewEnglish.setText(selectedWord.getEnglish());
 		
-		TextView textViewExample_us = (TextView) inflate.findViewById(R.id.example_us);
-		textViewExample_us.setText(selectedWord.getExapmple_us());
+//		TextView textViewExample_us = (TextView) inflate.findViewById(R.id.example_us);
+//		textViewExample_us.setText(selectedWord.getExapmple_us());
 
 		//Play button
 		ImageButton playButton = (ImageButton) inflate.findViewById(R.id.playWord);
@@ -90,6 +90,7 @@ public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInit
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		super.onCreateOptionsMenu(menu, inflater);
+		
 	}
 
 	@Override
