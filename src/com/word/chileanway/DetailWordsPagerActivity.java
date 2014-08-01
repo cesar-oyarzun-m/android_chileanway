@@ -1,6 +1,7 @@
 package com.word.chileanway;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -23,7 +24,7 @@ import com.word.chileanway.model.WordVO;
  */
 public class DetailWordsPagerActivity extends FragmentActivity  {
 	private ViewPager mViewPager;
-	private ArrayList<WordVO> wordsModel;
+	private List<WordVO> wordsModel;
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override

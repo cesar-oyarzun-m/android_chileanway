@@ -20,7 +20,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -50,7 +49,7 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 	private static final String AUDIO_ERROR = "Audio Error";
 	private static final int REQUEST_CODE = 1234;
 	private static final int RESULT_OK=-1;
-	private ArrayAdapter<WordVO> wordAdapter=null;
+	private WordAdapter<WordVO> wordAdapter=null;
 	private SearchView searchView=null;
 	private TextView emptyText;
 	
@@ -61,6 +60,7 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		setHasOptionsMenu(true);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

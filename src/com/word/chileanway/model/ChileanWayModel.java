@@ -3,6 +3,7 @@ package com.word.chileanway.model;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -89,7 +90,7 @@ public class ChileanWayModel {
 	 * Get model
 	 * @return {@link ArrayList}
 	 */
-	public  ArrayList<WordVO> getWordList() {
+	public  List<WordVO> getWordList() {
 		return wordList;
 	}
 }

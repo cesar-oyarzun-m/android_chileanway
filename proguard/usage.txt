@@ -2148,6 +2148,23 @@ com.word.chileanway.R$menu
 com.word.chileanway.R$string
 com.word.chileanway.R$style
 com.word.chileanway.R$styleable
+com.word.chileanway.adapter.WordAdapter:
+    80:82:public WordAdapter(android.content.Context,int)
+    92:94:public WordAdapter(android.content.Context,int,int)
+    104:106:public WordAdapter(android.content.Context,int,com.word.chileanway.model.WordVO[])
+    117:119:public WordAdapter(android.content.Context,int,int,com.word.chileanway.model.WordVO[])
+    142:144:public WordAdapter(android.content.Context,int,int,java.util.List)
+    152:160:public void add(com.word.chileanway.model.WordVO)
+    168:176:public void addAll(java.util.Collection)
+    184:192:public varargs void addAll(com.word.chileanway.model.WordVO[])
+    201:209:public void insert(com.word.chileanway.model.WordVO,int)
+    217:225:public void remove(com.word.chileanway.model.WordVO)
+    231:239:public void clear()
+    248:256:public void sort(java.util.Comparator)
+    282:283:public void setNotifyOnChange(boolean)
+    299:299:public android.content.Context getContext()
+    324:324:public int getPosition(com.word.chileanway.model.WordVO)
+    386:387:public void setDropDownViewResource(int)
 com.word.chileanway.fragments.DetailWordsFragment:
     private static final java.lang.String THIS_LANGUAGE_IS_NOT_SUPPORTED
     private static final java.lang.String INITILIZATION_FAILED

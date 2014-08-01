@@ -3924,9 +3924,9 @@ android.support.v7.widget.SuggestionsAdapter$ChildViewCache -> android.support.v
     android.widget.ImageView mIconRefine -> e
 com.word.chileanway.DetailWordsPagerActivity -> com.word.chileanway.DetailWordsPagerActivity:
     android.support.v4.view.ViewPager mViewPager -> n
-    java.util.ArrayList wordsModel -> o
+    java.util.List wordsModel -> o
     void onCreate(android.os.Bundle) -> onCreate
-    java.util.ArrayList access$0(com.word.chileanway.DetailWordsPagerActivity) -> a
+    java.util.List access$0(com.word.chileanway.DetailWordsPagerActivity) -> a
 com.word.chileanway.DetailWordsPagerActivity$1 -> com.word.chileanway.a:
     com.word.chileanway.DetailWordsPagerActivity this$0 -> a
     int getCount() -> b
@@ -3939,10 +3939,34 @@ com.word.chileanway.DetailWordsPagerActivity$2 -> com.word.chileanway.b:
 com.word.chileanway.MainActivity -> com.word.chileanway.MainActivity:
     void onCreate(android.os.Bundle) -> onCreate
 com.word.chileanway.adapter.WordAdapter -> com.word.chileanway.a.a:
-    android.app.Activity context -> a
-    java.util.ArrayList items -> b
-    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    java.util.List mObjects -> a
+    java.lang.Object mLock -> b
+    int mDropDownResource -> c
+    int mFieldId -> d
+    boolean mNotifyOnChange -> e
+    android.content.Context mContext -> f
+    java.util.ArrayList mOriginalValues -> g
+    com.word.chileanway.adapter.WordAdapter$ArrayFilter mFilter -> h
+    android.view.LayoutInflater mInflater -> i
+    void notifyDataSetChanged() -> notifyDataSetChanged
+    void init(android.content.Context,int,int,java.util.List) -> a
     int getCount() -> getCount
+    com.word.chileanway.model.WordVO getItem(int) -> a
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    android.view.View createViewFromResource(int,android.view.View,android.view.ViewGroup,int) -> a
+    android.view.View getDropDownView(int,android.view.View,android.view.ViewGroup) -> getDropDownView
+    android.widget.Filter getFilter() -> getFilter
+    java.lang.Object getItem(int) -> getItem
+    java.util.ArrayList access$1(com.word.chileanway.adapter.WordAdapter) -> a
+    java.lang.Object access$2(com.word.chileanway.adapter.WordAdapter) -> b
+    java.util.List access$3(com.word.chileanway.adapter.WordAdapter) -> c
+    void access$4(com.word.chileanway.adapter.WordAdapter,java.util.ArrayList) -> a
+    void access$5(com.word.chileanway.adapter.WordAdapter,java.util.List) -> a
+com.word.chileanway.adapter.WordAdapter$ArrayFilter -> com.word.chileanway.a.b:
+    com.word.chileanway.adapter.WordAdapter this$0 -> a
+    android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence) -> performFiltering
+    void publishResults(java.lang.CharSequence,android.widget.Filter$FilterResults) -> publishResults
 com.word.chileanway.fragments.DetailWordsFragment -> com.word.chileanway.b.a:
     android.speech.tts.TextToSpeech textToSpeech -> P
     com.word.chileanway.model.WordVO selectedWord -> Q
@@ -3959,7 +3983,7 @@ com.word.chileanway.fragments.DetailWordsFragment$1 -> com.word.chileanway.b.b:
     com.word.chileanway.fragments.DetailWordsFragment this$0 -> a
     void onClick(android.view.View) -> onClick
 com.word.chileanway.fragments.ListWordsFragment -> com.word.chileanway.b.c:
-    android.widget.ArrayAdapter wordAdapter -> X
+    com.word.chileanway.adapter.WordAdapter wordAdapter -> X
     android.widget.SearchView searchView -> Y
     android.widget.TextView emptyText -> Z
     void onCreate(android.os.Bundle) -> d
@@ -3979,7 +4003,7 @@ com.word.chileanway.model.ChileanWayModel -> com.word.chileanway.c.a:
     com.word.chileanway.model.ChileanWayModel getInstance() -> a
     java.util.ArrayList loadJsonFile(android.content.Context,android.content.res.AssetManager) -> a
     java.lang.String loadJSONFromAsset(android.content.res.AssetManager) -> a
-    java.util.ArrayList getWordList() -> b
+    java.util.List getWordList() -> b
 com.word.chileanway.model.WordVO -> com.word.chileanway.c.b:
     java.lang.String spanish -> a
     java.lang.String definition_es -> b
