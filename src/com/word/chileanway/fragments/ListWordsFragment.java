@@ -37,7 +37,6 @@ import com.word.chileanway.model.WordVO;
  * @author Cesar Oyarzun
  * 
  */
-@SuppressLint("NewApi")
 public class ListWordsFragment extends ListFragment implements SearchView.OnQueryTextListener {
 	
 	private static final String SERVER_ERROR = "Server Error";
@@ -49,9 +48,10 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 	private static final String AUDIO_ERROR = "Audio Error";
 	private static final int REQUEST_CODE = 1234;
 	private static final int RESULT_OK=-1;
-	private WordAdapter<WordVO> wordAdapter=null;
+	private WordAdapter wordAdapter=null;
 	private SearchView searchView=null;
 	private TextView emptyText;
+	private MenuItem searchItem;
 	
 	
 	@Override
@@ -60,7 +60,6 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		setHasOptionsMenu(true);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -94,7 +93,6 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		getListView().setEmptyView(emptyText);
 	}
 
-	@TargetApi(11)
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		// Inflate the menu items for use in the action bar
@@ -102,7 +100,7 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		inflater.inflate(R.menu.main, menu);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			// Pull out the SearchView
-			MenuItem searchItem = menu.findItem(R.id.menu_item_search);
+			 searchItem = menu.findItem(R.id.menu_item_search);
 			searchView = (SearchView) searchItem.getActionView();
 			searchView.setOnQueryTextListener(this);
 			searchView.setQueryHint(getActivity().getApplicationContext().getString(R.string.search_hint));
@@ -164,7 +162,6 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		        // Populate the wordsList with the String values the recognition engine thought it heard
 		        ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 		        wordAdapter.getFilter().filter(matches.get(0));
-		        
 		    }else if(resultCode == RecognizerIntent.RESULT_AUDIO_ERROR){
 		        showToastMessage(AUDIO_ERROR);
 		       }else if(resultCode == RecognizerIntent.RESULT_CLIENT_ERROR){

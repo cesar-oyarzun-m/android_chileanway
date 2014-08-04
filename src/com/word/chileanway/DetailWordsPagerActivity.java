@@ -1,6 +1,5 @@
 package com.word.chileanway;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.annotation.TargetApi;
@@ -75,6 +74,7 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 					}
 				});
 	}
+	
 
 
 }

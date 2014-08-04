@@ -1,6 +1,7 @@
 package com.word.chileanway.model;
 
 import java.io.Serializable;
+import java.util.Locale;
 /**
  * Word object
  * @author Cesar Oyarzun
@@ -15,6 +16,7 @@ public class WordVO implements Serializable{
 	private String spanish;
 	private String definition_es;
 	private String english;
+	private static final Locale localeES=new Locale("es-CL");
 	
 	
 	public WordVO(String spanishWord, String englishWord, String definition_es) {
@@ -47,6 +49,6 @@ public class WordVO implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return getSpanish();
+		return getSpanish().toLowerCase(localeES);
 	}
 }

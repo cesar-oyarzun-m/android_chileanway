@@ -5,4 +5,5 @@
     <string name="english">English</string>
     <string name="search_hint">Buscar Palabra</string>
     <string name="searchVoice">Voz</string>
+    <string name="search">Buscar</string>
 </resources>
