@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
     <item
         android:id="@+id/menu_item_search"
         android:icon="@android:drawable/ic_menu_search"
-        android:showAsAction="ifRoom"
         android:title="@string/search"
-        android:actionViewClass="android.widget.SearchView"/>
-       <item
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom"/>
+    
+    <item
         android:id="@+id/menu_item_searchVoice"
+        android:actionViewClass="android.widget.View"
         android:icon="@android:drawable/ic_btn_speak_now"
-        android:showAsAction="always"
-        android:title="@string/searchVoice"
-        android:actionViewClass="android.widget.View"/>
+        app:showAsAction="always"
+        android:title="@string/searchVoice"/>
+
 </menu>

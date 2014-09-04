@@ -1,7 +1,7 @@
 package com.word.chileanway;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 
 import com.word.chileanway.fragments.ListWordsFragment;
 import com.word.chileanway.model.ChileanWayModel;
@@ -11,7 +11,7 @@ import com.word.chileanway.model.ChileanWayModel;
  * @author Cesar Oyarzun
  * 
  */
-public class MainActivity extends FragmentActivity{
+public class MainActivity extends ActionBarActivity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

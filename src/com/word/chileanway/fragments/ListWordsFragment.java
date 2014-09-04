@@ -2,8 +2,6 @@ package com.word.chileanway.fragments;
 
 import java.util.ArrayList;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
@@ -13,6 +11,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v4.app.ListFragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.SearchView;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,8 +63,7 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_main, container,
-				false);
+		View rootView = inflater.inflate(R.layout.fragment_main, container,false);
 		emptyText = (TextView)rootView.findViewById(android.R.id.empty);
 		
 		wordAdapter = new WordAdapter(getActivity(),
@@ -101,7 +100,8 @@ public class ListWordsFragment extends ListFragment implements SearchView.OnQuer
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			// Pull out the SearchView
 			 searchItem = menu.findItem(R.id.menu_item_search);
-			searchView = (SearchView) searchItem.getActionView();
+//			searchView = (SearchView) searchItem.getActionView();
+			searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 			searchView.setOnQueryTextListener(this);
 			searchView.setQueryHint(getActivity().getApplicationContext().getString(R.string.search_hint));
 			// Get the data from our searchable.xml as a SearchableInfo

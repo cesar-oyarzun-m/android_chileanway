@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 
 import com.word.chileanway.fragments.DetailWordsFragment;
 import com.word.chileanway.model.ChileanWayModel;
@@ -21,7 +22,7 @@ import com.word.chileanway.model.WordVO;
  * @author Cesar Oyarzun
  * 
  */
-public class DetailWordsPagerActivity extends FragmentActivity  {
+public class DetailWordsPagerActivity extends ActionBarActivity  {
 	private ViewPager mViewPager;
 	private List<WordVO> wordsModel;
 
@@ -48,7 +49,7 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 		});
 
 		WordVO word = (WordVO) getIntent().getSerializableExtra(DetailWordsFragment.SELECTED_WORD);
-		getActionBar().setTitle(word.getSpanish());
+		getSupportActionBar().setTitle(word.getSpanish());
 		for (int i = 0; i < wordsModel.size(); i++) {
 			if (wordsModel.get(i).getSpanish().equals(word.getSpanish())) {
 				mViewPager.setCurrentItem(i);
@@ -69,7 +70,7 @@ public class DetailWordsPagerActivity extends FragmentActivity  {
 						WordVO word = wordsModel.get(pos);
 						if (word.getSpanish() != null) {
 							setTitle(word.getSpanish());
-							getActionBar().setTitle(word.getSpanish());;
+							getSupportActionBar().setTitle(word.getSpanish());;
 						}
 					}
 				});

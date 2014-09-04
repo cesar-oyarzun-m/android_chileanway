@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -81,7 +82,8 @@ public class DetailWordsFragment extends Fragment implements TextToSpeech.OnInit
 		});
 		
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-			getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+			ActionBarActivity activity = (ActionBarActivity) getActivity();
+			activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 
 		return inflate;
