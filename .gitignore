@@ -1,1 +1,8 @@
 bin
+.settings/org.eclipse.jdt.core.prefs
+gen/android/support/v7/appcompat/R.java
+gen/com/word/chileanway/BuildConfig.java
+gen/com/word/chileanway/R.java
+proguard/dump.txt
+proguard/mapping.txt
+proguard/usage.txt
